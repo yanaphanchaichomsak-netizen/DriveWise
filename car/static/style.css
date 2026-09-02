@@ -1,0 +1,289 @@
+/* นำเข้าฟอนต์ Google Font ที่ดูทันสมัย */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --dark-bg: #121212;
+    --card-bg: rgba(255, 255, 255, 0.9);
+}
+
+body {
+    /* ใส่รูปพื้นหลังที่เกี่ยวกับรถยนต์หรือถนน (ใช้ URL รูปภาพจาก Unsplash ที่สวยและฟรี) */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920');
+    
+    background-size: cover;         /* ให้รูปขยายเต็มหน้าจอ */
+    background-position: center;    /* จัดวางรูปให้อยู่ตรงกลาง */
+    background-attachment: fixed;   /* ให้รูปอยู่กับที่เวลาเลื่อนหน้าจอ (Parallax Effect) */
+    
+    font-family: 'Kanit', sans-serif;
+    color: #fff;                    /* เปลี่ยนตัวหนังสือหลักเป็นสีขาวเพื่อให้เด่นบนพื้นหลังเข้ม */
+    min-height: 100vh;
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+/* ปรับแต่งหัวข้อ Header ให้ดูเด่นขึ้น */
+h2.text-center {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+/* ตกแต่ง Card ให้มีความนูนและโปร่งแสง */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    /* เพิ่มการเรืองแสงสีฟ้าจางๆ (Glow Effect) */
+    box-shadow: 0 15px 45px rgba(0, 123, 255, 0.4); 
+    
+    /* เพิ่มขอบเรืองแสงให้ดูคมชัดขึ้น */
+    border: 1px solid rgba(0, 123, 255, 0.6);
+    
+    /* ทำให้การเคลื่อนไหวนุ่มนวล */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* ตกแต่งปุ่มเลื่อนสีน้ำเงิน */
+.form-range::-webkit-slider-thumb {
+    background: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    cursor: pointer;
+}
+
+/* ตกแต่งรางของแถบเลื่อน */
+.form-range::-webkit-slider-runnable-track {
+    background-color: #e9ecef;
+    height: 8px;
+    border-radius: 5px;
+}
+
+/* ส่วนแสดงตัวเลขหลัก (Metrics) */
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 10px 0;
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.metric-label {
+    color: #6c757d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ตกแต่งปุ่มคำนวณ */
+.btn-analyze {
+    background: linear-gradient(45deg, #007bff, #6610f2);
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: 600;
+    color: white;
+    filter: brightness(1.2);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
+    transform: scale(1.02);
+}
+
+.btn-analyze:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* ส่วน Input Range */
+input[type="range"] {
+    height: 8px;
+    border-radius: 5px;
+    background: #ddd;
+    outline: none;
+}
+
+/* ส่วนราคาน้ำมัน Real-time */
+.price-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #fff;
+    border-radius: 50px;
+    border: 2px solid #007bff;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* สไตล์สำหรับการแจ้งเตือน */
+.alert {
+    border-radius: 12px;
+    border: none;
+    font-size: 0.95rem;
+}
+.btn-white {
+    transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    background-color: #f8f9fa !important;
+}
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+/* สร้าง Class สำหรับปุ่มเรืองแสง */
+.btn-glow {
+    transition: all 0.4s ease; /* ให้การเปลี่ยนสีดูนุ่มนวล */
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* เอฟเฟกต์เมื่อเอาเมาส์ไปชี้ (Hover) */
+.btn-glow:hover {
+    transform: translateY(-5px) scale(1.02); /* ลอยขึ้นและขยายใหญ่นิดๆ */
+    
+    /* สั่งให้เรืองแสงเป็นสีม่วง-ฟ้า ตามโทนพื้นหลัง */
+    box-shadow: 0 0 20px rgba(10, 249, 86, 0.8), 
+                0 0 40px rgba(31, 240, 255, 0.704);
+                
+    background-color: #ffffff !important;
+    color: #5d00b5 !important;
+}
+
+/* (Option) เอฟเฟกต์ให้แสงกะพริบเบาๆ ตลอดเวลาแม้ไม่ได้ชี้ */
+.btn-glow {
+    animation: breathing 3s infinite ease-in-out;
+}
+
+.card {
+    /* 1. ทำให้พื้นหลังขาวแบบโปร่งแสง (สำคัญมาก! ถ้าขาวทึบจะมองไม่เห็นรอยเบลอ) */
+    background: rgba(255, 255, 255, 0.7) !important; 
+    
+    /* 2. สั่งให้เบลอสิ่งที่อยู่ข้างหลังกล่อง */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); /* สำหรับ Browser ตระกูล Safari */
+    
+    /* 3. ตแต่งเพิ่มเติมให้ดูละมุนขึ้น */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+.card-map-bg {
+    /* ใส่ URL รูปแผนที่ตัวอย่าง (หรือยาหยีจะแคปรูปแผนที่จริงมาใส่ก็ได้) */
+    background-image: url('https://i.imgur.com/8N4S4S6.png'); 
+    background-size: cover;    /* ให้รูปขยายเต็มการ์ด */
+    background-position: center; /* จัดรูปให้อยู่ตรงกลาง */
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease; /* เพิ่มอนิเมชั่นเวลาเอาเมาส์มาชี้ */
+}
+
+/* อนิเมชั่นซูมรูปพื้นหลังเบาๆ เวลาเอาเมาส์มาชี้ */
+.card-map-bg:hover {
+    background-size: 110%; /* ขยายรูปขึ้น 10% */
+}
+/* สร้างพื้นหลังแบบสไลด์โชว์ */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #000; /* กันหน้าจอขาวตอนโหลดรูป */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* ปรับเป็น 24 วินาที (6 รูป x 4 วินาที) เพื่อให้แต่ละรูปมีเวลาโชว์และค่อยๆ จาง */
+    animation: backgroundFade 36s infinite ease-in-out;
+}
+.app-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase; /* ทำให้เป็นตัวพิมพ์ใหญ่ทั้งหมดจะดูเท่ขึ้น */
+    letter-spacing: 2px; /* เว้นระยะห่างตัวอักษรให้ดูโปร่ง */
+    text-shadow: 0 0 15px rgba(0, 212, 255, 0.5); /* เรืองแสงสีฟ้าอ่อนๆ */
+    margin-bottom: 5px;
+}
+
+.badge-ci {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b); /* สีแดงไล่เฉดแบบ Ferrari */
+    color: white;
+    padding: 2px 10px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+    margin-left: 10px;
+    box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+}
+
+.app-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+@keyframes backgroundFade {
+    0%, 10% { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://4kwallpapers.com/images/walls/thumbs_3t/25475.jpg'); }
+    16%, 24% { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80'); }
+    32%, 40% { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://4kwallpapers.com/images/walls/thumbs_3t/12980.jpg'); }
+    48%, 58% { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://4kwallpapers.com/images/walls/thumbs_3t/20428.jpg'); }
+    64%, 70% { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://4kwallpapers.com/images/walls/thumbs_3t/169.jpg'); }
+    /* รูปที่ 6: ถนนกลางคืน (เปลี่ยนเป็นลิงก์ที่เสถียรขึ้น) */
+    80%, 90% { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://4kwallpapers.com/images/walls/thumbs_3t/24670.jpg'); }
+    100% { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://4kwallpapers.com/images/walls/thumbs_3t/25475.jpg'); }
+}
+@keyframes breathing {
+    0% { box-shadow: 0 0 5px rgba(177, 22, 255, 0.629); }
+    50% { box-shadow: 0 0 15px #f416eda5; }
+    100% { box-shadow: 0 0 5px rgba(7, 138, 231, 0.718); }
+}
+#oil_type_select {
+    background-color: #f0fdf4; /* สีเขียวอ่อนแบบปั๊มน้ำมัน */
+    font-weight: 600;
+    color: #166534;
+}
+
+#res_price {
+    color: #ff6600; /* สีส้มทองให้ดูเหมือนราคาน้ำมันบนป้ายหน้าปั๊ม */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#fuel_strategy_card {
+    border-left: 5px solid #007bff;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#fuel_advice_text {
+    font-size: 1.1rem;
+    box-shadow: inset 0 0 10px rgba(231, 118, 227, 0.431);
+}
+
+/* Responsive สำหรับมือถือ */
+@media (max-width: 768px) {
+    .metric-value {
+        font-size: 1.8rem;
+    }
+}
